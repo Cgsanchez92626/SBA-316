@@ -1,132 +1,23 @@
- {
-  margin: 0;
-  padding: 0;
+* {
   box-sizing: border-box;
 }
 
 /* CSS Custom Properties */
 :root {
-  --main-bg: lightgoldenrodyellow;
-  --top-bar-bg: #C25317;
-  --top-nav-bg: #3da4ab;
-  --fav-brn-bg: #524F39;
+  --main-bg: #524F39;
+  --top-menu-bg: #0e9aa7;
+  --sub-menu-bg: #3da4ab;
 }
+
 body {
-  display: flex;
-  flex-direction: column;
-  background-color: lightgoldenrodyellow;
-  /* background-image: image('LARE.jpg');  */
-  /* height: 100vh; */
-}
-.topbar {
-  z-index: 9;
-  justify-content: flex-end;
-  align-self: flex-start;
-  align-items: flex-start;
-  width: 94vw;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4px 12px;
-  display: flex;
-  position: relative;
-}
-.navbar {
-  font-family: "Times New Roman", Times, serif;
-  z-index: 9;
-  justify-content: flex-end;
-  align-self: flex-start;
-  align-items: flex-start;
-  width: 94vw;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 4px 12px;
-  display: flex;
-  position: relative;
-}
-.email-link {
-  flex-direction: column;
-  justify-content: center;
-  align-self: stretch;
-  margin-left: 12px;
-  margin-right: 12px;
-  font-size: 12px;
-  transition: color 0.4s ease-in-out;
-  display: flex;
-}
-.nav-link {
-  flex-direction: column;
-  justify-content: center;
-  align-self: stretch;
-  margin-left: 12px;
-  margin-right: 12px;
-  font-size: 16px;
-  transition: color 0.4s ease-in-out;
-  display: flex;
-}
-#myLogo {
-  width: 300px;
-  height: 200px;
-  border: 1px solid black;
-  animation: mymove 5s infinite;
+  font-family: Tahoma, Geneva, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 3rem auto;
+  color: white;
 }
 
-@keyframes mymove {
-  50% {border: 15px solid lightblue;}
-}
-.main {
-  display: flex;
-  flex: 6;
-  background-color: green;
-  gap: 5px;
-}
-#services {
-  display: flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    align-self: stretch;
-  display: flex;
-  background-color: orange;
-  font-weight:100;
-  gap: 5px;
-}
-section {
-  flex: 1;
-  background-color: rgb(169, 225, 225);
-  border: #ee964b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.footer {
-  flex: 1;
-  background-color: #ee964b;
-}
-a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: hotpink;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
-}
-/* Added  */
 .flex-ctr {
   display: flex;
   justify-content: center;
@@ -139,35 +30,39 @@ a:active {
   align-items: center;
 }
 
+nav a {
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#top-menu a:hover {
+  background-color: var(--sub-menu-bg);
+}
+
+/* Added this per  Part 2-2 */
 header,
-#topbar {
+#top-menu {
   position: relative;
 }
 
-#topbar {
+#top-menu {
   z-index: 20;
 }
 
-#navbar {
+#sub-menu {
   width: 100%;
   z-index: 10;
   transition: top 0.5s ease-out;
 }
 
-#navbar a:hover {
-  background-color: var(--top-nav-bg);
+#sub-menu a:hover {
+  background-color: var(--top-menu-bg);
 }
 
 nav a.active {
-  background-color: var(--top-nav-bg);
+  background-color: var(--sub-menu-bg);
   color: var(--main-bg);
-}
-@media screen and (max-width: 1279px) {
-  .top1-toggler a {
-    --aown: 0;
-    display: block;
-    min-width: 42px;
-    color: inherit;
-    text-align: center;
-  }
 }
