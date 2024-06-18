@@ -1,46 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const topbar = document.getElementById("topbar");
-  const topnav = document.getElementById("topnav");
+document.addEventListener('DOMContentLoaded', function() {
+    // Part 1: Manipulating topbar element
+    const topBarEl = document.getElementById('topbar');
+    topBarEl.style.height = '100%';
+    topBarEl.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--top-bar-bg');
+    topBarEl.classList.add('flex-around');
 
-  // Mimicking the email from the last <a> element in topbar
-  const allowedEmail = "CarmenSanchezREI@gmail.com";
+    // Part 2: Manipulating topnav element
+    const topNavEl = document.getElementById('topnav');
+    topNavEl.style.height = '100%';
+    topNavEl.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--top-nav-bg');
+    topNavEl.classList.add('flex-around');
 
-  const loginForm = document.getElementById("loginForm");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
+    // Part 3: Manipulating topNavEl links and adding event listener
+    const topMenuLinks = topNavEl.querySelectorAll('a');
+    
+    // Append a new link for Sign-In
+    const newLink = document.createElement('a');
+    newLink.href = '/Pages/Login.html';
+    newLink.classList.add('nav-link');
+    newLink.textContent = 'Sign-In';
 
-  loginForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission for now
+    // Append the new link to topNavEl
+    topNavEl.appendChild(newLink);
 
-    // Basic email validation
-    if (!isValidEmail(emailInput.value.trim())) {
-      alert("Please enter a valid email address.");
-      emailInput.focus();
-      return false;
-    }
+    // Event listener for topNavEl clicks
+    topNavEl.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default action
 
-    // Password validation (just checking it's not empty here)
-    if (passwordInput.value.trim() === "") {
-      alert("Please enter your password.");
-      passwordInput.focus();
-      return false;
-    }
-
-    // Additional check: Only allow login if email matches the allowedEmail
-    if (emailInput.value.trim() !== allowedEmail) {
-      alert("Access denied. You are not authorized to sign in.");
-      return false;
-    }
-
-    // If all validations pass, you can proceed with form submission
-    alert("Login successful!"); // Replace with actual form submission logic
-    loginForm.reset(); // Optional: Clear form inputs after successful login
-  });
-
-  // Function to validate email format
-  function isValidEmail(email) {
-    // Basic email regex pattern for demonstration
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
+        // Toggle between Sign-In and Sign Out based on some condition (not fully implemented here)
+        if (event.target.tagName === 'A') {
+            if (event.target.textContent === 'Sign-In') {
+                event.target.textContent = 'Sign Out';
+            } else {
+                event.target.textContent = 'Sign-In';
+            }
+        }
+    });
 });
