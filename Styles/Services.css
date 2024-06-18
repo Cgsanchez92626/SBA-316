@@ -1,0 +1,120 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgoldenrodyellow;
+    /* background-image: image('LARE.jpg');  */
+    /* height: 100vh; */
+  }
+  .topbar {
+    z-index: 9;
+    justify-content: flex-end;
+    align-self: flex-start;
+    align-items: flex-start;
+    width: 94vw;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px 12px;
+    display: flex;
+    position: relative;
+  }
+  .navbar {
+    font-family: "Times New Roman", Times, serif;
+    z-index: 9;
+    justify-content: flex-end;
+    align-self: flex-start;
+    align-items: flex-start;
+    width: 94vw;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px 12px;
+    display: flex;
+    position: relative;
+  }
+  .email-link {
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 12px;
+    transition: color 0.4s ease-in-out;
+    display: flex;
+  }
+  .nav-link {
+      flex-direction: column;
+      justify-content: center;
+      align-self: stretch;
+      margin-left: 12px;
+      margin-right: 12px;
+      font-size: 16px;
+      transition: color 0.4s ease-in-out;
+      display: flex;
+    }
+    #services {
+      /* display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-self: stretch; */
+      flex: 6;
+      background-color: #f4d35e;
+      font-weight: bold;
+      gap: 5px;
+    }
+    table, th, tr, td {
+      flex: 1;
+      background-color: rgb(169, 225, 225);
+      display: flex;
+      /* align-items: center; */
+      flex-direction: row;
+      justify-content:flex-start;
+      border: 1px solid black;
+      text-align: center;
+    }
+    .footer {
+      flex: 1;
+      background-color: #ee964b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+    }
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: hotpink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 1279px) {
+    .top1-toggler a {
+      --aown: 0;
+      display: block;
+      min-width: 42px;
+      color: inherit;
+      text-align: center;
+    }
+  }

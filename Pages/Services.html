@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSREI - Los Angeles</title>
+    <link rel="stylesheet" href="/Styles/Services.css" />
+    <script> 
+      function toggle(source) { 
+          let checkboxes = document 
+              .querySelectorAll('input[type="checkbox"]'); 
+          for (let i = 0; i < checkboxes.length; i++) { 
+              if (checkboxes[i] != source) 
+                  checkboxes[i].checked = source.checked; 
+          } 
+      } 
+    </script> 
+  </head>
+  <body>
+    <!-- <p
+      style="
+        background-image: url('https://media.istockphoto.com/id/1370938613/photo/los-angeles.jpg?s=1024x1024&w=is&k=20&c=lmkS6-qctIBAZqhjdQPAbl5pgP44-fTk_3tin6rctfI=');
+      "
+    > -->
+      <!-- <img
+            src="/Images/RECityScape.jpg"
+            height="200px"
+        /> -->
+    <!-- </p> -->
+    <!-- HTML COde for the Contact Info at the top-->
+    <div class="topbar">
+      <a href="tel:+19493555899" class="email-link">
+        <strong><em>949-355-5899</em></strong></a
+      >
+      <a
+        href="mailto:CarmenSanchezREI@gmail.com?subject=Real Estate Inquiry"
+        class="email-link"
+      >
+        <strong><em>CarmenSanchezREI@gmail.com</em></strong></a
+      >
+    </div>
+    <!-- Code for the Navigational Links -->
+    <div class="navbar">
+      <a
+        href="/Pages/index.html" class="nav-link">Home</a>
+      <a
+        href="/Pages/AboutMe.html" class="nav-link">About Me</a>
+      <a       
+        href="/Pages/Services.html" class="nav-link">Services</a>
+    </div>
+    <div class="main">
+      <!-- Form and Drop-Down-Allow users to subscribe to Marketing -->
+      <h2> We provide various real estate services</h2>
+      <form class="contact" name="contact" action="#" method="post"
+      >
+        <label for="Subscribe"
+          style="
+          display:flex;
+          border: 2px solid black; 
+          padding: 10px; 
+          background-color:#f3eded; 
+          box-shadow: 10px 10px 1px rgba(117, 115, 115, 0.3);
+          ">Subscribe to our marketing service:
+        <select name="Subscribe" id="REService">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input 
+            type="email" 
+            value="Enter email" 
+        >
+        <input type="submit" value="Subscribe"
+            style="
+            margin.bottom: 20px;
+            width: 100px;
+            height: 20px;
+            text-align: center;
+            background-color: #62DED6
+            ">
+        </label>
+      </form>
+      <!-- Form and Table to allow users to make a request -->
+        <br> <br>
+        <!-- Table that allows them to choose a service -->
+        <form class="ERequest" name="erequest" action="#" method="post">
+          <label for="Subscribe">Make a request for us to contact you:</label>
+              <table class="service-tab">
+                <tr>
+                  <th><input type="checkbox" onclick="toggle(this);"></th>
+                  <th>Service</th>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select"></td>
+                  <td>A Real Estate Consultation</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select"></td>
+                  <td>Discuss Buying Real Estate</td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" name="select"></td>
+                  <td>Discuss Selling Real Estate</td>
+                </tr>          
+              </table><br>
+          <input 
+              type="email" 
+              value="Enter email" 
+              onfocus="this.value=' '"
+          >
+          <input 
+              type="text" 
+              value="Enter Phone Number" 
+          >
+          <input 
+              type="text" 
+              textarea maxlength="200"
+              value="Tell us about your request"
+          >
+          <input type="ERequest" value="Send Request"
+              style="
+              /* display: none; */
+              margin.bottom: 20px;
+              width: 100px;
+              height: 20px;
+              text-align: center;
+              background-color: #62DED6
+              "><br>
+              <br></br>
+        <!-- When a service is selected a form is displayed and 
+             once completed emailed to me, for now display is on as default-->
+        </form>    
+    </div>
+    
+    <div class="footer" style="display: flex;">
+      <strong><em>Buy Real Estate In Los Angeles</em></strong>
+      <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WKsHkRqCqwg?si=K4dkzlUac5H87oU_" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen></iframe>" frameborder="0"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
