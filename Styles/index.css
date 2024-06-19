@@ -17,7 +17,7 @@
   flex: 1;
   justify-content: center;
   background-color: orange;
-  font-weight:100;
+  font-weight: 100;
   gap: 5px;
 }
 section {
@@ -26,7 +26,7 @@ section {
   border: #ee964b;
   display: flex;
   justify-content: center;
-  }
+}
 .footer {
   flex: 1;
   background-color: #ee964b;
