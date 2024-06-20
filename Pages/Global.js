@@ -80,10 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
     subMenuEl.innerHTML = "";
 
     subLinks.forEach(function (subLink) {
+      console.log(subLink);
       const a = document.createElement("a");
       a.setAttribute("href", subLink.href);
       a.textContent = subLink.text;
       subMenuEl.appendChild(a);
     });
+    console.log("Submenu element after creation:", subMenuEl);
   }
 });

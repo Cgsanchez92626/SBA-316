@@ -7,23 +7,33 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement
   ).getPropertyValue("--main-bg");
 
-  // const topbar = document.getElementById("topbar");
-  // const topnav = document.getElementById("topnav");
-
   // Mimicking the email from the last <a> element in topbar
   const allowedEmail = "CarmenSanchezREI@gmail.com";
-
   const loginForm = document.getElementById("loginForm");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
+
+  // Function to validate email format
+  function isValidEmail(email) {
+    // Basic email regex pattern for demonstration
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission for now
 
     // Basic email validation
     const enteredEmail = emailInput.value.trim().toLowerCase(); // Normalize email to lowercase
-    if (enteredEmail !== allowedEmail.toLowerCase()) {
+    if (!isValidEmail(enteredEmail)) {
+      alert("Please enter a valid email address.");
+      emailInput.focus();
+      return false;
+    }
+
+       if (enteredEmail !== allowedEmail.toLowerCase()) {
       alert("Access denied. You are not authorized to sign in.");
+      loginForm.reset(); // Clear form inputs after successful login
       return false;
     }
 
@@ -41,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const signInLink = document.querySelector(
       "#sub-menu a[href='/Pages/Login.html']"
     );
-    // console.log(signInLink)
+    console.log(signInLink)
     if (signInLink) {
       signInLink.textContent = "Sign Out";
-      signInLink.setAttribute("href", "#"); // Replace with sign-out action if needed
+      signInLink.setAttribute("href", "/Pages/Login.html"); // Replace with sign-out action if needed
     }
 
     loginForm.reset(); // Clear form inputs after successful login
