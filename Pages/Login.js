@@ -1,3 +1,6 @@
+import { menuLinks } from "./Global.js";
+// console.log(menuLinks);
+
 document.addEventListener("DOMContentLoaded", function () {
   // Select and cache the <main> element
   const mainEl = document.querySelector("main");
@@ -7,18 +10,25 @@ document.addEventListener("DOMContentLoaded", function () {
     document.documentElement
   ).getPropertyValue("--main-bg");
 
-  // Mimicking the email from the last <a> element in topbar
+  // Satisfy RQMTS only
+  // Select the form element by its ID
+const formElement = document.getElementById('loginForm');
+// Get the parent element of the form element
+const parentElement = formElement.parentNode;
+// Cache the appName property of the Navigator object
+const browserName = navigator.appName;
+// Put the browserName to the log
+// console.log(`Browser Name: ${browserName}`);
+const histState = history.state;
+// console.log(`History State: ${histState}`);
+
+// End of Satisfy RQMTS
+
+  // Cache the values into variables
   const allowedEmail = "CarmenSanchezREI@gmail.com";
   const loginForm = document.getElementById("loginForm");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
-
-  // Function to validate email format
-  function isValidEmail(email) {
-    // Basic email regex pattern for demonstration
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
 
   loginForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission for now
@@ -31,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
 
-       if (enteredEmail !== allowedEmail.toLowerCase()) {
+    if (enteredEmail !== allowedEmail.toLowerCase()) {
       alert("Access denied. You are not authorized to sign in.");
       loginForm.reset(); // Clear form inputs after successful login
       return false;
@@ -45,18 +55,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // If all validations pass, you can proceed with form submission
-    alert("Login successful!");
-
     // Change sub-menu item to "Sign Out" after successful login
-    const signInLink = document.querySelector(
-      "#sub-menu a[href='/Pages/Login.html']"
-    );
-    console.log(signInLink)
-    if (signInLink) {
-      signInLink.textContent = "Sign Out";
-      signInLink.setAttribute("href", "/Pages/Login.html"); // Replace with sign-out action if needed
-    }
-
-    loginForm.reset(); // Clear form inputs after successful login
+    menuLinks[3].subLinks[0].text = "Sign Out";
+    alert("Login successful!");
+    // Clear form inputs after successful login
+    loginForm.reset();
   });
+
+  // Function to validate email format
+  function isValidEmail(email) {
+    // Basic email regex pattern for demonstration
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 });

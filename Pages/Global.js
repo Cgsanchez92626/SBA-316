@@ -1,5 +1,5 @@
 // Menu data structure
-var menuLinks = [
+export const menuLinks = [
   { text: "home", href: "/Pages/index.html" },
   {
     text: "about me",
@@ -12,7 +12,9 @@ var menuLinks = [
   {
     text: "account",
     href: "#",
-    subLinks: [{ text: "sign in", href: "/Pages/Login.html" }],
+    subLinks: [
+      { classname: "signin", text: "sign in", href: "/Pages/Login.html" },
+    ],
   },
 ];
 
@@ -80,12 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
     subMenuEl.innerHTML = "";
 
     subLinks.forEach(function (subLink) {
-      console.log(subLink);
+      // console.log(subLink);
       const a = document.createElement("a");
       a.setAttribute("href", subLink.href);
       a.textContent = subLink.text;
+      a.classList.add(subLink.classname);
       subMenuEl.appendChild(a);
     });
-    console.log("Submenu element after creation:", subMenuEl);
+    // console.log("Submenu element after creation:", subMenuEl);
   }
 });
